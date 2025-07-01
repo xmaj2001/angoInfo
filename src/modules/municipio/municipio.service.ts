@@ -15,7 +15,8 @@ export class MunicipioService {
         schema: z.object({
           provinces: z.array(z.string()),
         }),
-        prompt: 'List all the provinces of Angola.',
+        prompt:
+          'Please provide an up-to-date list of all provinces in Angola, based on the most recent data available. Please include the name of the province, its capital and the source of the data used.',
       });
       return { success: false, message: 'Dados obtidos com sucesso', object };
     } catch (error) {
@@ -30,7 +31,7 @@ export class MunicipioService {
         schema: z.object({
           municipios: z.array(z.string()),
         }),
-        prompt: `list all municipalities of ${data.provincia} in angola`,
+        prompt: `Please provide an up-to-date list of all municipalities in ${data.provincia} , Angola, based on the most recent data available. Include the name of the province, its capital and the source of the data used.`,
       });
       return {
         success: true,
